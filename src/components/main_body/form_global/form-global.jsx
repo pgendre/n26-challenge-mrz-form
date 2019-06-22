@@ -92,6 +92,11 @@ class FormGlobal extends React.Component {
           type="date-picker"
           onChange={evt => this.handleDateChange(evt, 'dateOfBirth')}
         />
+
+        <FormInput
+          type="date-picker"
+          onChange={evt => this.handleDateChange(evt, 'dateOfExpiration')}
+        />
       </div>
     )
   }
