@@ -36,11 +36,22 @@ class FormGlobal extends React.Component {
       error: null
     }
   }
+  namesRegex = "^([a-zA-Z]+[ |'|-|-]?)+$"
+  passportNumberRegex = '^[a-zA-Z0-9]{9}$'
 
   render() {
     return (
       <div>
-        // <FormInput type="text" />
+        <FormInput
+          placeholder="Surname"
+          pattern={this.namesRegex}
+          type="text"
+        />
+        <FormInput
+          placeholder="Passport Number ex: AV4562B56"
+          pattern={this.passportNumberRegex}
+          type="text"
+        />
         <FormInput type="date-picker" />
         <FormInput type="select" options={countries} />
       </div>
