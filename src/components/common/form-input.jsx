@@ -5,13 +5,14 @@ import DatePicker from 'react-datepicker'
 class FormInput extends React.Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    error: PropTypes.string
   }
   constructor(props) {
     super(props)
   }
 
-  displayError = () => <div>Error</div>
+  displayError = () => this.props.error === '' || <div>{this.props.error}</div>
 
   displayTextInput = () => <input {...this.props} />
 

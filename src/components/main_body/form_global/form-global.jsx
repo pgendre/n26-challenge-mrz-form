@@ -11,31 +11,31 @@ class FormGlobal extends React.Component {
   state = {
     surname: {
       value: '',
-      error: null
+      error: ''
     },
     givenNames: {
       value: '',
-      error: null
+      error: ''
     },
     passportNumber: {
       value: '',
-      error: null
+      error: ''
     },
     issuingCountry: {
       value: '',
-      error: null
+      error: ''
     },
     nationality: {
       value: '',
-      error: null
+      error: ''
     },
     dateOfBirth: {
       value: '',
-      error: null
+      error: ''
     },
     dateOfExpiration: {
       value: '',
-      error: null
+      error: ''
     }
   }
 
