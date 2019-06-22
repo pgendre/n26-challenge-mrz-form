@@ -1,0 +1,30 @@
+{
+  "surname": {
+    "value": "BAD ** SURNAME",
+    "error": ""
+  },
+  "givenNames": {
+    "value": "BAD '_GIV@N NAMes",
+    "error": ""
+  },
+  "passportNumber": {
+    "value": "12234378",
+    "error": ""
+  },
+  "issuingCountry": {
+    "value": "",
+    "error": ""
+  },
+  "nationality": {
+    "value": "",
+    "error": ""
+  },
+  "dateOfBirth": {
+    "value": "",
+    "error": ""
+  },
+  "dateOfExpiration": {
+    "value": "",
+    "error": ""
+  }
+}

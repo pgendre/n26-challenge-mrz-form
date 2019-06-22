@@ -5,7 +5,7 @@ import _ from 'lodash'
 import countries from '../../../data/countries'
 import FormInput from '../../common/form-input'
 import formDescription from './form-description'
-import formValidation from './form-validation'
+import { formValidation } from './form-validation'
 
 class FormGlobal extends React.Component {
   static propTypes = {
@@ -53,7 +53,8 @@ class FormGlobal extends React.Component {
   handleDateChange = (date, targetedKey) => this.changeState(date, targetedKey)
 
   handleFormValidation = () => {
-    console.log('HANDLE FORM VALIDATIOn ===================')
+    const { isFormValid, newState } = formValidation(this.state)
+    console.log('HANDLE FORM VALIDATIOn ===================', newState)
   }
 
   render() {

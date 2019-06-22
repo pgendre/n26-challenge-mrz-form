@@ -6,19 +6,19 @@ const formValidation = state => {
 
   _validRegexForStringInput(newState)
 
-  if (_.isUndefined(newState.issuingCountry.value))
+  if (_isValueAnEmptyString(newState.issuingCountry.value)) {
     _enableError('issuingCountry', newState)
-
-  if (_.isUndefined(newState.nationality.value))
+  }
+  if (_isValueAnEmptyString(newState.nationality.value)) {
     _enableError('nationality', newState)
-
-  if (_.isUndefined(newState.dateOfBirth.value))
+  }
+  if (_isValueAnEmptyString(newState.dateOfBirth.value)) {
     _enableError('dateOfBirth', newState)
-
-  if (_.isUndefined(newState.dateOfExpiration.value))
+  }
+  if (_isValueAnEmptyString(newState.dateOfExpiration.value)) {
     _enableError('dateOfExpiration', newState)
-
-  return newState
+  }
+  return { isFormValid: _isFormValid(newState), newState }
 }
 
 const _validRegexForStringInput = newState => {
@@ -35,9 +35,11 @@ const _enableError = (field, newState) => {
 }
 
 const _isFormValid = newState => _getEnabledErrors(newState).lenght > 0
+
 const _getEnabledErrors = newState =>
   Object.values(newState)
     .map(field => field.error)
     .filter(error => error !== '')
 
+const _isValueAnEmptyString = value => value === ''
 export { formValidation }
