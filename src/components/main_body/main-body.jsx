@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import FormGlobal from './form_global/form-global'
+
 class MainBody extends React.Component {
   static propTypes = {}
 
@@ -9,7 +11,11 @@ class MainBody extends React.Component {
   }
 
   render() {
-    return <div> MainBody </div>
+    return (
+      <div>
+        MainBody <FormGlobal />
+      </div>
+    )
   }
 }
 
