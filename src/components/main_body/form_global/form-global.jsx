@@ -54,53 +54,50 @@ class FormGlobal extends React.Component {
 
   handleFormValidation = () => {
     const { isFormValid, newState } = formValidation(this.state)
-    console.log('HANDLE FORM VALIDATIOn ===================', newState)
+    if (!isFormValid) this.setState(newState)
   }
 
+  displayStringFields = fields =>
+    fields.map(field => (
+      <FormInput
+        type="text"
+        placeholder={formDescription[field].placeholder}
+        pattern={formDescription[field].regex}
+        value={this.state[field].value}
+        error={this.state[field].error}
+        onChange={evt => this.handleChange(evt, field)}
+      />
+    ))
+
   render() {
-    console.log('NEW STATE =', this.state)
     return (
       <div>
-        <FormInput
-          type="text"
-          placeholder={formDescription.surname.placeholder}
-          pattern={formDescription.surname.regex}
-          value={this.state.surname.value}
-          onChange={evt => this.handleChange(evt, 'surname')}
-        />
-        <FormInput
-          type="text"
-          placeholder={formDescription.givenNames.placeholder}
-          pattern={formDescription.givenNames.regex}
-          value={this.state.givenNames.value}
-          onChange={evt => this.handleChange(evt, 'givenNames')}
-        />
-        <FormInput
-          type="text"
-          placeholder={formDescription.passportNumber.placeholder}
-          pattern={formDescription.passportNumber.regex}
-          value={this.state.passportNumber.value}
-          onChange={evt => this.handleChange(evt, 'passportNumber')}
-        />
+        {this.displayStringFields(['surname', 'givenNames', 'passportNumber'])}
         <FormInput
           type="select"
           options={countries}
           onChange={evt => this.handleChange(evt, 'issuingCountry')}
           value={this.state.issuingCountry.value}
+          error={this.state.issuingCountry.error}
         />
         <FormInput
           type="select"
           options={countries}
           onChange={evt => this.handleChange(evt, 'nationality')}
           value={this.state.nationality.value}
+          error={this.state.nationality.error}
         />
         <FormInput
           type="date-picker"
           onChange={evt => this.handleDateChange(evt, 'dateOfBirth')}
+          value={this.state.dateOfBirth.value}
+          error={this.state.dateOfBirth.error}
         />
         <FormInput
           type="date-picker"
           onChange={evt => this.handleDateChange(evt, 'dateOfExpiration')}
+          value={this.state.dateOfExpiration.value}
+          error={this.state.dateOfExpiration.error}
         />
         <button onClick={this.handleFormValidation}>Submission</button>
       </div>

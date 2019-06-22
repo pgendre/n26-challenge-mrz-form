@@ -10,21 +10,21 @@ test('FORM VALIDATION 01: Should generate proper errors if fields do NOT match r
     surname: {
       value: 'BAD ** SURNAME',
       error:
-        'Max length 20 characters. Letters, spaces or hyphens allowed (One maximum between two surnames).'
+        'Required. Max length 20 characters. Letters, spaces or hyphens allowed (One maximum between two surnames).'
     },
     givenNames: {
       value: "BAD '_GIV@N NAMes",
       error:
-        'Max length 20 characters. Letters, spaces or hyphens allowed (One maximum between two surnames).'
+        'Required. Max length 20 characters. Letters, spaces or hyphens allowed (One maximum between two surnames).'
     },
     passportNumber: {
       value: '12234378',
       error: 'Exactly 9 alphanumeric characters.'
     },
-    issuingCountry: { value: '', error: 'Mandatory field.' },
-    nationality: { value: '', error: 'Mandatory field.' },
-    dateOfBirth: { value: '', error: 'Mandatory field.' },
-    dateOfExpiration: { value: '', error: 'Mandatory field.' }
+    issuingCountry: { value: '', error: 'Required.' },
+    nationality: { value: '', error: 'Required.' },
+    dateOfBirth: { value: '', error: 'Required.' },
+    dateOfExpiration: { value: '', error: 'Required.' }
   }
   expect(isFormValid).toBe(false)
   expect(JSON.stringify(newState)).toBe(JSON.stringify(expectedState))
