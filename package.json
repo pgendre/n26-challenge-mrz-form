@@ -6,7 +6,8 @@
     "react": "^16.8.6",
     "react-datepicker": "^2.7.0",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "mrz-generator": "https://github.com/pgendre/n26-challenge-mrz-generator.git"
   },
   "devDependencies": {
     "rewire": "^4.0.1"
@@ -21,7 +22,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

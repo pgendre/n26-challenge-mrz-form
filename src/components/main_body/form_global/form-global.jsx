@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
+import { simulateMrzApiCall } from '../../../api/mrz-simulator'
 import countries from '../../../data/countries'
 import FormInput from '../../common/form-input'
 import formDescription from './form-description'
 import { formValidation } from './form-validation'
+import { formatDataForApi } from './format-data'
 
 class FormGlobal extends React.Component {
   static propTypes = {
@@ -54,7 +56,11 @@ class FormGlobal extends React.Component {
 
   handleFormValidation = () => {
     const { isFormValid, newState } = formValidation(this.state)
-    if (!isFormValid) this.setState(newState)
+    if (!isFormValid) {
+      this.setState(newState)
+    } else {
+      simulateMrzApiCall(newState)
+    }
   }
 
   displayStringFields = fields =>
