@@ -5,9 +5,13 @@ import _ from 'lodash'
 import countries from '../../../data/countries'
 import FormInput from '../../common/form-input'
 import formDescription from './form-description'
+import formValidation from './form-validation'
 
 class FormGlobal extends React.Component {
-  static propTypes = {}
+  static propTypes = {
+    handleFormSubmission: PropTypes.func.isRequired
+  }
+
   state = {
     surname: {
       value: '',
@@ -48,6 +52,10 @@ class FormGlobal extends React.Component {
 
   handleDateChange = (date, targetedKey) => this.changeState(date, targetedKey)
 
+  handleFormValidation = () => {
+    console.log('HANDLE FORM VALIDATIOn ===================')
+  }
+
   render() {
     console.log('NEW STATE =', this.state)
     return (
@@ -73,30 +81,27 @@ class FormGlobal extends React.Component {
           value={this.state.passportNumber.value}
           onChange={evt => this.handleChange(evt, 'passportNumber')}
         />
-
         <FormInput
           type="select"
           options={countries}
           onChange={evt => this.handleChange(evt, 'issuingCountry')}
           value={this.state.issuingCountry.value}
         />
-
         <FormInput
           type="select"
           options={countries}
           onChange={evt => this.handleChange(evt, 'nationality')}
           value={this.state.nationality.value}
         />
-
         <FormInput
           type="date-picker"
           onChange={evt => this.handleDateChange(evt, 'dateOfBirth')}
         />
-
         <FormInput
           type="date-picker"
           onChange={evt => this.handleDateChange(evt, 'dateOfExpiration')}
         />
+        <button onClick={this.handleFormValidation}>Submission</button>
       </div>
     )
   }

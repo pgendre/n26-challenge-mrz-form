@@ -9,11 +9,14 @@ class MainBody extends React.Component {
   state = {
     mrzResult: ''
   }
+  handleFormSubmission = data => {
+    console.log('DATA ===========', data)
+  }
 
   render() {
     return (
       <div>
-        MainBody <FormGlobal />
+        MainBody <FormGlobal handleFormSubmission={this.handleFormSubmission} />
       </div>
     )
   }
