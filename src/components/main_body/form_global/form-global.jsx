@@ -21,7 +21,7 @@ class FormGlobal extends React.Component {
       value: '',
       error: null
     },
-    country: {
+    issuingCountry: {
       value: '',
       error: null
     },
@@ -39,38 +39,59 @@ class FormGlobal extends React.Component {
     }
   }
 
-  handleChange = (evt, targetedKey) => {
-    this.setState(
-      _.set(_.clone(this.state), `${targetedKey}.value`, evt.target.value)
-    )
+  changeState = (value, targetedKey) => {
+    this.setState(_.set(_.clone(this.state), `${targetedKey}.value`, value))
   }
 
+  handleChange = (evt, targetedKey) =>
+    this.changeState(evt.target.value, targetedKey)
+
+  handleDateChange = (date, targetedKey) => this.changeState(date, targetedKey)
+
   render() {
+    console.log('NEW STATE =', this.state)
     return (
       <div>
         <FormInput
+          type="text"
           placeholder={formDescription.surname.placeholder}
           pattern={formDescription.surname.regex}
           value={this.state.surname.value}
           onChange={evt => this.handleChange(evt, 'surname')}
-          type="text"
         />
         <FormInput
+          type="text"
           placeholder={formDescription.givenNames.placeholder}
           pattern={formDescription.givenNames.regex}
           value={this.state.givenNames.value}
           onChange={evt => this.handleChange(evt, 'givenNames')}
-          type="text"
         />
         <FormInput
+          type="text"
           placeholder={formDescription.passportNumber.placeholder}
           pattern={formDescription.passportNumber.regex}
           value={this.state.passportNumber.value}
           onChange={evt => this.handleChange(evt, 'passportNumber')}
-          type="text"
         />
-        <FormInput type="date-picker" />
-        <FormInput type="select" options={countries} />
+
+        <FormInput
+          type="select"
+          options={countries}
+          onChange={evt => this.handleChange(evt, 'issuingCountry')}
+          value={this.state.issuingCountry.value}
+        />
+
+        <FormInput
+          type="select"
+          options={countries}
+          onChange={evt => this.handleChange(evt, 'nationality')}
+          value={this.state.nationality.value}
+        />
+
+        <FormInput
+          type="date-picker"
+          onChange={evt => this.handleDateChange(evt, 'dateOfBirth')}
+        />
       </div>
     )
   }
