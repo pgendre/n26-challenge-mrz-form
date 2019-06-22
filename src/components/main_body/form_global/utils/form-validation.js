@@ -18,8 +18,6 @@ const formValidation = state => {
   if (_isValueAnEmptyString(newState.dateOfExpiration.value)) {
     _enableError('dateOfExpiration', newState)
   }
-
-  console.log('enable errors', _getEnabledErrors(newState).length)
   return { isFormValid: _isFormValid(newState), newState }
 }
 

@@ -4,7 +4,7 @@ const formatDataForApi = state => ({
     type: 'p',
     issuingCountry: state.issuingCountry.value,
     number: state.passportNumber.value,
-    expirationDate: state.dateOfExpiration.value,
+    expirationDate: state.dateOfExpiration.value.toString(),
     optionalField1: '',
     optionalField2: ''
   },
@@ -12,7 +12,7 @@ const formatDataForApi = state => ({
     surname: state.surname.value,
     givenNames: state.givenNames.value,
     nationality: state.nationality.value,
-    dateOfBirth: state.dateOfBirth.value,
+    dateOfBirth: state.dateOfBirth.value.toString(),
     sex: 'unspecified'
   }
 })

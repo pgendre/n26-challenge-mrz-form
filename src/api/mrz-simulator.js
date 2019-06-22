@@ -5,7 +5,8 @@ const simulateMrzApiCall = payload => {
   return new Promise((rslv, rjct) => {
     setTimeout(() => {
       try {
-        rslv({ mrz: generateMrz(payload) })
+        const mrz = generateMrz(payload)
+        rslv({ mrz })
       } catch (e) {
         rjct(e)
       }

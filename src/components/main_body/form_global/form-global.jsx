@@ -10,7 +10,7 @@ import { formatDataForApi } from './utils/format-data'
 
 class FormGlobal extends React.Component {
   static propTypes = {
-    handleFormSubmission: PropTypes.func.isRequired
+    triggerApiCall: PropTypes.func.isRequired
   }
 
   state = {
@@ -44,21 +44,21 @@ class FormGlobal extends React.Component {
     }
   }
 
-  changeState = (value, targetedKey) => {
+  changeState = (targetedKey, value) => {
     this.setState(_.set(_.clone(this.state), `${targetedKey}.value`, value))
   }
 
   handleChange = (evt, targetedKey) =>
-    this.changeState(evt.target.value, targetedKey)
+    this.changeState(targetedKey, evt.target.value)
 
-  handleDateChange = (date, targetedKey) => this.changeState(date, targetedKey)
+  handleDateChange = (date, targetedKey) => this.changeState(targetedKey, date)
 
-  handleFormValidation = () => {
+  handleUserValidation = () => {
     const { isFormValid, newState } = formValidation(this.state)
     if (!isFormValid) {
       this.setState(newState)
     } else {
-      this.props.handleFormSubmission(formatDataForApi(newState))
+      this.props.triggerApiCall(formatDataForApi(newState))
     }
   }
 
@@ -105,7 +105,7 @@ class FormGlobal extends React.Component {
           value={this.state.dateOfExpiration.value}
           error={this.state.dateOfExpiration.error}
         />
-        <button onClick={this.handleFormValidation}>Submission</button>
+        <button onClick={this.handleUserValidation}>Submission</button>
       </div>
     )
   }
