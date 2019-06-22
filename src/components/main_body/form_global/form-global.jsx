@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import countries from '../../../data/countries'
 import FormInput from '../../common/form-input'
 
 class FormGlobal extends React.Component {
@@ -39,7 +40,9 @@ class FormGlobal extends React.Component {
   render() {
     return (
       <div>
-        <FormInput />
+        // <FormInput type="text" />
+        <FormInput type="date-picker" />
+        <FormInput type="select" options={countries} />
       </div>
     )
   }

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import DatePicker from 'react-datepicker'
 
 class FormInput extends React.Component {
   static propTypes = {
@@ -8,9 +9,20 @@ class FormInput extends React.Component {
 
   displayError = () => <div>Error</div>
 
-  displaySelect = () => <select />
+  displayTextInput = () => <input {...this.props} />
 
-  displayTextInput = () => <select />
+  displaySelect = () => (
+    <select {...this.props}>
+      <option value={null}> -- </option>
+      {this.props.options.map(o => (
+        <option key={o.value} value={o.option}>
+          {o.label}
+        </option>
+      ))}
+    </select>
+  )
+
+  displayDatePicker = () => <DatePicker {...this.props} />
 
   displayInput = () => {
     switch (this.props.type) {
@@ -18,6 +30,10 @@ class FormInput extends React.Component {
         return this.displayTextInput()
       case 'select':
         return this.displaySelect()
+      case 'date-picker':
+        return this.displayDatePicker()
+      default:
+        return this.displayTextInput()
     }
   }
 
