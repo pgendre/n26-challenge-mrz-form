@@ -1,21 +1,26 @@
+.form-input {
+  width: 100%;
+}
+
 .form-input input,
 .form-input:focus input {
   background-color: #fff;
   color: #333333;
   border: none;
   height: 40px;
-  border-radius: 2;
+  border-radius: 3px;
   margin-top: 15px;
   padding: 3px 15px;
   font-size: 12px;
   -webkit-box-shadow: 1px 1px 7px rgba(189, 183, 183, 0.4);
   box-shadow: 1px 1px 7px rgba(189, 183, 183, 0.4);
   transition: all 1s ease-out;
+  width: 100%;
 }
 
 .form-input::placeholder {
   color: #333333;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .form-input:hover {
@@ -24,10 +29,10 @@
   box-shadow: 3px 3px 9px rgba(189, 183, 183, 0.4);
 }
 
-input:valid {
+.form-input input:valid {
   box-shadow: 0 0 2px 1px green;
 }
 
-input:invalid {
+.form-input input:invalid {
   box-shadow: 0 0 2px 1px red;
 }

@@ -77,7 +77,7 @@ class FormGlobal extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container-form">
         {this.displayStringFields(['surname', 'givenNames', 'passportNumber'])}
         <FormInput
           type="select"
@@ -105,7 +105,9 @@ class FormGlobal extends React.Component {
           value={this.state.dateOfExpiration.value}
           error={this.state.dateOfExpiration.error}
         />
-        <button onClick={this.handleUserValidation}>Submission</button>
+        <button className="btn" onClick={this.handleUserValidation}>
+          Submission
+        </button>
       </div>
     )
   }

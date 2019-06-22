@@ -1,11 +1,11 @@
-button {
+.btn {
   display: inline-block;
   height: 40px;
   width: 220px;
   border-radius: 0;
   color: white;
   cursor: pointer;
-  background: hsl(224, 48%, 45%);
+  background: var(--main-color);
   text-align: center;
   font-size: 0.95em;
   font-weight: bolder;
@@ -16,4 +16,8 @@ button {
   outline: none;
   cursor: pointer;
   transition: box-shadow 0.5s ease-out;
+}
+
+.btn:hover {
+  background: var(--main-color-light);
 }

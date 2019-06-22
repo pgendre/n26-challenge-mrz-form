@@ -20,25 +20,21 @@ class MainBody extends React.Component {
   }
 
   handleApiCall = res => {
-    console.log('RES=============', res)
     this.setState({ mrzString: res.mrz })
   }
   handleError = err => {
-    console.log('ERRROR ===================', err)
     this.setState({ apiError: err.message })
   }
 
   triggerApiCall = data => {
-    console.log('SENT DATA ===========', data)
     simulateMrzApiCall(data)
       .then(res => this.handleApiCall(res))
       .catch(this.handleError)
   }
 
   render() {
-    console.log('THIS.MRZTRING ==========', this.state)
     return (
-      <div>
+      <div className="container-main-body">
         <FormGlobal triggerApiCall={this.triggerApiCall} />
         <MrzResult mrzString={this.state.mrzString} />
       </div>
