@@ -1,4 +1,4 @@
-import { formatDataForApi } from '../../../../components/main_body/form_global/format-data'
+import { formatDataForApi } from '../../../../components/main_body/form_global/utils/format-data'
 
 import correctState from './data/correct-state'
 

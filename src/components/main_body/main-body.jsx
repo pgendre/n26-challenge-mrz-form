@@ -13,7 +13,6 @@ class MainBody extends React.Component {
   }
 
   handleFormSubmission = data => {
-    console.log('DATA ===========', data)
     simulateMrzApiCall(data)
       .then(res => console.log('RES===', res))
       .catch(e => console.log(e))

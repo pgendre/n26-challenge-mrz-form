@@ -4,9 +4,9 @@ import _ from 'lodash'
 
 import countries from '../../../data/countries'
 import FormInput from '../../common/form-input'
-import formDescription from './form-description'
-import { formValidation } from './form-validation'
-import { formatDataForApi } from './format-data'
+import formDescription from './utils/form-description'
+import { formValidation } from './utils/form-validation'
+import { formatDataForApi } from './utils/format-data'
 
 class FormGlobal extends React.Component {
   static propTypes = {

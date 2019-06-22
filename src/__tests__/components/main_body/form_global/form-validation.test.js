@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { formValidation } from '../../../../components/main_body/form_global/form-validation'
+import { formValidation } from '../../../../components/main_body/form_global/utils/form-validation'
 import onlyErrorsState from './data/only-errors-state'
 import correctState from './data/correct-state'
 
