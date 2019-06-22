@@ -1,0 +1,30 @@
+{
+  "surname": {
+    "value": "Corr'ect-Surname",
+    "error": ""
+  },
+  "givenNames": {
+    "value": "Correct'given-name",
+    "error": ""
+  },
+  "passportNumber": {
+    "value": "AB23C3789",
+    "error": ""
+  },
+  "issuingCountry": {
+    "value": "D",
+    "error": ""
+  },
+  "nationality": {
+    "value": "D",
+    "error": ""
+  },
+  "dateOfBirth": {
+    "value": "17 Oct 1986 00:12:00 GMT",
+    "error": ""
+  },
+  "dateOfExpiration": {
+    "value": "11 May 2021 00:00:00 GMT",
+    "error": ""
+  }
+}
