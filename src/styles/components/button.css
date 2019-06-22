@@ -1,10 +1,8 @@
 .btn {
-  display: inline-block;
   height: 40px;
-  width: 220px;
-  border-radius: 0;
+  width: 500px;
+  border-radius: 3px;
   color: white;
-  cursor: pointer;
   background: var(--main-color);
   text-align: center;
   font-size: 0.95em;
@@ -12,10 +10,7 @@
   text-transform: uppercase;
   line-height: 15px;
   border: none;
-  white-space: inherit;
-  outline: none;
-  cursor: pointer;
-  transition: box-shadow 0.5s ease-out;
+  /*transition: box-shadow 0.5s ease-out;*/
 }
 
 .btn:hover {

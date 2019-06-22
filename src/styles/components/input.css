@@ -1,9 +1,7 @@
-.form-input {
-  width: 100%;
-}
-
 .form-input input,
-.form-input:focus input {
+select,
+.form-input:focus input,
+select {
   background-color: #fff;
   color: #333333;
   border: none;
@@ -15,7 +13,6 @@
   -webkit-box-shadow: 1px 1px 7px rgba(189, 183, 183, 0.4);
   box-shadow: 1px 1px 7px rgba(189, 183, 183, 0.4);
   transition: all 1s ease-out;
-  width: 100%;
 }
 
 .form-input::placeholder {
@@ -27,6 +24,15 @@
   border-color: inherit;
   -webkit-box-shadow: 3px 3px 9px rgba(189, 183, 183, 0.4);
   box-shadow: 3px 3px 9px rgba(189, 183, 183, 0.4);
+}
+
+.form-input select,
+input {
+  width: 100%;
+}
+
+.form-input .react-datepicker-wrapper {
+  width: 100%;
 }
 
 .form-input input:valid {
