@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import countries from '../../../data/countries'
 import FormInput from '../../common/form-input'
+import formDescription from './form-description'
 
 class FormGlobal extends React.Component {
   static propTypes = {}
@@ -36,20 +37,23 @@ class FormGlobal extends React.Component {
       error: null
     }
   }
-  namesRegex = "^([a-zA-Z]+[ |'|-|-]?)+$"
-  passportNumberRegex = '^[a-zA-Z0-9]{9}$'
 
   render() {
     return (
       <div>
         <FormInput
-          placeholder="Surname"
-          pattern={this.namesRegex}
+          placeholder={formDescription.surname.placeholder}
+          pattern={formDescription.surname.regex}
           type="text"
         />
         <FormInput
-          placeholder="Passport Number ex: AV4562B56"
-          pattern={this.passportNumberRegex}
+          placeholder={formDescription.givenNames.placeholder}
+          pattern={formDescription.givenNames.regex}
+          type="text"
+        />
+        <FormInput
+          placeholder={formDescription.passportNumber.placeholder}
+          pattern={formDescription.passportNumber.regex}
           type="text"
         />
         <FormInput type="date-picker" />
