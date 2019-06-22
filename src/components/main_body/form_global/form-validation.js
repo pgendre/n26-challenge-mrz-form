@@ -19,7 +19,7 @@ const formValidation = state => {
     _enableError('dateOfExpiration', newState)
   }
 
-  console.log('enable errors', _getEnabledErrors(newState).lenght)
+  console.log('enable errors', _getEnabledErrors(newState).length)
   return { isFormValid: _isFormValid(newState), newState }
 }
 

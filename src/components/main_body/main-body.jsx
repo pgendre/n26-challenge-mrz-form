@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { simulateMrzApiCall } from '../../api/mrz-simulator'
+
 import FormGlobal from './form_global/form-global'
 
 class MainBody extends React.Component {
@@ -9,14 +11,18 @@ class MainBody extends React.Component {
   state = {
     mrzResult: ''
   }
+
   handleFormSubmission = data => {
     console.log('DATA ===========', data)
+    simulateMrzApiCall(data)
+      .then(res => console.log('RES===', res))
+      .catch(e => console.log(e))
   }
 
   render() {
     return (
       <div>
-        MainBody <FormGlobal handleFormSubmission={this.handleFormSubmission} />
+        <FormGlobal handleFormSubmission={this.handleFormSubmission} />
       </div>
     )
   }

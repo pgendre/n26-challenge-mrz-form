@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
-import { simulateMrzApiCall } from '../../../api/mrz-simulator'
 import countries from '../../../data/countries'
 import FormInput from '../../common/form-input'
 import formDescription from './form-description'
@@ -59,13 +58,14 @@ class FormGlobal extends React.Component {
     if (!isFormValid) {
       this.setState(newState)
     } else {
-      simulateMrzApiCall(newState)
+      this.props.handleFormSubmission(formatDataForApi(newState))
     }
   }
 
   displayStringFields = fields =>
-    fields.map(field => (
+    fields.map((field, i) => (
       <FormInput
+        key={i}
         type="text"
         placeholder={formDescription[field].placeholder}
         pattern={formDescription[field].regex}
