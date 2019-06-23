@@ -71,6 +71,7 @@ class FormGlobal extends React.Component {
         pattern={formDescription[field].regex}
         value={this.state[field].value}
         error={this.state[field].error}
+        maxlength={30}
         onChange={evt => this.handleChange(evt, field)}
       />
     ))
@@ -81,6 +82,7 @@ class FormGlobal extends React.Component {
         {this.displayStringFields(['surname', 'givenNames', 'passportNumber'])}
         <FormInput
           type="select"
+          placeholder={formDescription.issuingCountry.placeholder}
           options={countries}
           onChange={evt => this.handleChange(evt, 'issuingCountry')}
           value={this.state.issuingCountry.value}
@@ -88,6 +90,7 @@ class FormGlobal extends React.Component {
         />
         <FormInput
           type="select"
+          placeholder={formDescription.nationality.placeholder}
           options={countries}
           onChange={evt => this.handleChange(evt, 'nationality')}
           value={this.state.nationality.value}

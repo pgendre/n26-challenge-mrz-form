@@ -12,12 +12,12 @@ test('FORM VALIDATION 01: Should generate proper errors if fields do NOT match r
     surname: {
       value: 'BAD ** SURNAME',
       error:
-        'Required. Max length 20 characters. Letters, spaces or hyphens allowed (One maximum between two surnames).'
+        'Required. Max length 30 characters. Letters, spaces or hyphens allowed (One maximum between two surnames).'
     },
     givenNames: {
       value: "BAD '_GIV@N NAMes",
       error:
-        'Required. Max length 20 characters. Letters, spaces or hyphens allowed (One maximum between two surnames).'
+        'Required. Max length 30 characters. Letters, spaces or hyphens allowed (One maximum between two surnames).'
     },
     passportNumber: {
       value: '12234378',

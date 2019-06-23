@@ -17,7 +17,7 @@ class FormInput extends React.Component {
 
   displaySelect = () => (
     <select {...this.props}>
-      <option value={''}> -- </option>
+      <option value={''}> -- {this.props.placeholder} -- </option>
       {this.props.options.map(o => (
         <option key={o.value} value={o.value}>
           {o.label}
