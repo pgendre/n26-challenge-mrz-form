@@ -3,13 +3,13 @@
     "regex": "^([a-zA-Z]+[ |'|-|-]?)+$",
     "placeholder": "Surname, ex: Mac O'Neil",
     "error":
-      "Required. Max length 30 characters. Letters, spaces or hyphens allowed (One maximum between two surnames)."
+      "Required. Max length 30 characters. Letters, spaces or hyphens allowed."
   },
   "givenNames": {
     "regex": "^([a-zA-Z]+[ |'|-|-]?)+$",
     "placeholder": "Given names, ex: John Alexander-Martin",
     "error":
-      "Required. Max length 30 characters. Letters, spaces or hyphens allowed (One maximum between two surnames)."
+      "Required. Max length 30 characters. Letters, spaces or hyphens allowed."
   },
   "passportNumber": {
     "regex": "^[a-zA-Z0-9]{9}$",

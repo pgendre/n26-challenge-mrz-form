@@ -42,3 +42,9 @@ input {
 .form-input input:invalid {
   box-shadow: 0 0 2px 1px red;
 }
+
+.form-input .input-error {
+  color: var(--error-color-dark);
+  margin-top: 10px;
+  font-size: 0.8em;
+}

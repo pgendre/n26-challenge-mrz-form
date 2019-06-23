@@ -55,9 +55,9 @@ class FormGlobal extends React.Component {
 
   handleUserValidation = () => {
     const { isFormValid, newState } = formValidation(this.state)
-    if (!isFormValid) {
-      this.setState(newState)
-    } else {
+
+    this.setState(newState)
+    if (isFormValid) {
       this.props.triggerApiCall(formatDataForApi(newState))
     }
   }
@@ -71,7 +71,7 @@ class FormGlobal extends React.Component {
         pattern={formDescription[field].regex}
         value={this.state[field].value}
         error={this.state[field].error}
-        maxlength={30}
+        maxLength={30}
         onChange={evt => this.handleChange(evt, field)}
       />
     ))

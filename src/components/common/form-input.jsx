@@ -11,7 +11,10 @@ class FormInput extends React.Component {
     error: PropTypes.string
   }
 
-  displayError = () => this.props.error === '' || <div>{this.props.error}</div>
+  displayError = () =>
+    this.props.error === '' || (
+      <div className="input-error">{this.props.error}</div>
+    )
 
   displayTextInput = () => <input {...this.props} />
 

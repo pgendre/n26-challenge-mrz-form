@@ -5,19 +5,8 @@ const formValidation = state => {
   const newState = _.cloneDeep(state)
 
   _validRegexForStringInput(newState)
+  _validRequiredFields(newState)
 
-  if (_isValueAnEmptyString(newState.issuingCountry.value)) {
-    _enableError('issuingCountry', newState)
-  }
-  if (_isValueAnEmptyString(newState.nationality.value)) {
-    _enableError('nationality', newState)
-  }
-  if (_isValueAnEmptyString(newState.dateOfBirth.value)) {
-    _enableError('dateOfBirth', newState)
-  }
-  if (_isValueAnEmptyString(newState.dateOfExpiration.value)) {
-    _enableError('dateOfExpiration', newState)
-  }
   if (!_areBirthDateAndExpirationDateCoherent(newState)) {
     _enableError('dateOfExpiration', newState)
   }
@@ -26,16 +15,36 @@ const formValidation = state => {
 }
 
 const _validRegexForStringInput = newState => {
-  ;['surname', 'givenNames', 'passportNumber'].forEach(field => {
-    _doesStringMatchRegex(field, newState) || _enableError(field, newState)
-  })
+  ;['surname', 'givenNames', 'passportNumber'].forEach(field =>
+    _checkRegexAndProcessError(field, newState)
+  )
 }
+
+const _checkRegexAndProcessError = (field, newState) =>
+  !_doesStringMatchRegex(field, newState)
+    ? _enableError(field, newState)
+    : _disableError(field, newState)
+
+const _validRequiredFields = newState => {
+  ;['issuingCountry', 'nationality', 'dateOfBirth', 'dateOfExpiration'].forEach(
+    field => _checkRequiredFieldAndProcessError(field, newState)
+  )
+}
+
+const _checkRequiredFieldAndProcessError = (field, newState) =>
+  _isValueAnEmptyString(newState[field].value)
+    ? _enableError(field, newState)
+    : _disableError(field, newState)
 
 const _doesStringMatchRegex = (field, newState) =>
   new RegExp(formDescription[field].regex).test(newState[field].value)
 
 const _enableError = (field, newState) => {
   newState[field].error = formDescription[field].error
+}
+
+const _disableError = (field, newState) => {
+  newState[field].error = ''
 }
 
 const _areBirthDateAndExpirationDateCoherent = newState =>
