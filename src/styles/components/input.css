@@ -1,50 +1,43 @@
-.form-input input,
-select,
-.form-input:focus input,
+.form-group {
+  margin-top: 20px;
+}
+
+.form-group input,
 select {
-  background-color: #fff;
-  color: #333333;
+  width: 100%;
   border: none;
+  color: #555;
   height: 40px;
   border-radius: 3px;
-  margin-top: 15px;
   padding: 3px 15px;
-  font-size: 12px;
+  font-size: 1em;
   -webkit-box-shadow: 1px 1px 7px rgba(189, 183, 183, 0.4);
-  box-shadow: 1px 1px 7px rgba(189, 183, 183, 0.4);
+  box-shadow: 1px 3px 7px rgba(189, 183, 183, 0.4);
   transition: all 0.7s ease-out;
+  background-color: white;
 }
 
-.form-input::placeholder {
-  color: #333333;
-  opacity: 0.7;
-}
-
-.form-input:hover {
-  border-color: inherit;
-  -webkit-box-shadow: 3px 3px 9px rgba(189, 183, 183, 0.4);
-  box-shadow: 3px 3px 9px rgba(189, 183, 183, 0.4);
-}
-
-.form-input select,
-input {
+.form-group .react-datepicker-wrapper {
   width: 100%;
 }
 
-.form-input .react-datepicker-wrapper {
-  width: 100%;
-}
-
-.form-input input:valid {
+.form-group input:valid,
+select:valid {
   box-shadow: 0 0 2px 1px var(--main-color-dark);
 }
 
-.form-input input:invalid {
+.form-group input:invalid,
+select:invalid {
   box-shadow: 0 0 2px 1px var(--error-color-dark);
 }
 
-.form-input .input-error {
+.form-group .input-error {
   color: var(--error-color-dark);
   margin-top: 10px;
-  font-size: 0.8em;
+  font-size: 0.85em;
+}
+
+.form-group label {
+  font-size: 0.85em;
+  margin-bottom: 2px;
 }

@@ -8,9 +8,11 @@ class FormInput extends React.Component {
     type: PropTypes.string.isRequired,
     options: PropTypes.array,
     onChange: PropTypes.func.isRequired,
+    label: PropTypes.string,
     error: PropTypes.string
   }
 
+  displayLabel = () => this.props.label && <label>{this.props.label}</label>
   displayError = () =>
     this.props.error === '' || (
       <div className="input-error">{this.props.error}</div>
@@ -46,7 +48,8 @@ class FormInput extends React.Component {
 
   render() {
     return (
-      <div className="form-input">
+      <div className="form-group">
+        {this.displayLabel()}
         {this.displayInput()}
         {this.displayError()}
       </div>

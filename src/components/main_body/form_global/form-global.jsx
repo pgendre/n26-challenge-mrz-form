@@ -55,7 +55,6 @@ class FormGlobal extends React.Component {
 
   handleUserValidation = () => {
     const { isFormValid, newState } = formValidation(this.state)
-
     this.setState(newState)
     if (isFormValid) {
       this.props.triggerApiCall(formatDataForApi(newState))
@@ -98,14 +97,16 @@ class FormGlobal extends React.Component {
         />
         <FormInput
           type="date-picker"
+          label={formDescription.dateOfBirth.label}
           onChange={evt => this.handleDateChange(evt, 'dateOfBirth')}
-          value={this.state.dateOfBirth.value}
+          selected={this.state.dateOfBirth.value}
           error={this.state.dateOfBirth.error}
         />
         <FormInput
           type="date-picker"
+          label={formDescription.dateOfExpiration.label}
           onChange={evt => this.handleDateChange(evt, 'dateOfExpiration')}
-          value={this.state.dateOfExpiration.value}
+          selected={this.state.dateOfExpiration.value}
           error={this.state.dateOfExpiration.error}
         />
         <button className="btn" onClick={this.handleUserValidation}>
