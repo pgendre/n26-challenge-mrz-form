@@ -6,11 +6,9 @@ import 'react-datepicker/dist/react-datepicker.css'
 class FormInput extends React.Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
+    options: PropTypes.array,
     onChange: PropTypes.func.isRequired,
     error: PropTypes.string
-  }
-  constructor(props) {
-    super(props)
   }
 
   displayError = () => this.props.error === '' || <div>{this.props.error}</div>

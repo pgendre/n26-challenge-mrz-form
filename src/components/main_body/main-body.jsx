@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import _ from 'lodash'
 
 import { simulateMrzApiCall } from '../../api/mrz-simulator'
@@ -8,8 +7,6 @@ import FormGlobal from './form_global/form-global'
 import MrzResult from './mrz-result'
 
 class MainBody extends React.Component {
-  static propTypes = {}
-
   state = {
     mrzString: '',
     apiError: ''
