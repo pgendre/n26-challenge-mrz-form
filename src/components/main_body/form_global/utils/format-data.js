@@ -1,6 +1,6 @@
 const formatDataForApi = state => ({
   passport: {
-    mrzType: 'td1',
+    mrzType: 'td3',
     type: 'p',
     issuingCountry: state.issuingCountry.value,
     number: state.passportNumber.value,

@@ -6,7 +6,7 @@ test('FORMAT DATA 01: Should format a correct payload for API.', () => {
   const payloadForApi = formatDataForApi(correctState)
   const expectedPayload = {
     passport: {
-      mrzType: 'td1',
+      mrzType: 'td3',
       type: 'p',
       issuingCountry: 'D',
       number: 'AB23C3789',

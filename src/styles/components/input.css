@@ -3,8 +3,7 @@
 }
 
 .form-group input,
-select {
-  width: 100%;
+.form-group select {
   border: none;
   color: #555;
   height: 40px;
@@ -17,17 +16,25 @@ select {
   background-color: white;
 }
 
+.form-group input {
+  width: 93%;
+}
+
+.form-group select {
+  width: 100%;
+}
+
 .form-group .react-datepicker-wrapper {
   width: 100%;
 }
 
 .form-group input:valid,
-select:valid {
+.form-group select:valid {
   box-shadow: 0 0 2px 1px var(--main-color-dark);
 }
 
 .form-group input:invalid,
-select:invalid {
+.form-group select:invalid {
   box-shadow: 0 0 2px 1px var(--error-color-dark);
 }
 
@@ -39,5 +46,6 @@ select:invalid {
 
 .form-group label {
   font-size: 0.85em;
-  margin-bottom: 2px;
+  position: relative;
+  top: -5px;
 }
