@@ -1,6 +1,7 @@
 :root {
-  --main-color: hsl(224, 48%, 30%);
-  --main-color-light: hsl(224, 48%, 40%);
+  --main-color-dark: hsl(183, 62%, 25%);
+  --main-color: hsl(183, 62%, 35%);
+  --main-color-light: hsl(183, 62%, 45%);
   --error-color: hsl(0, 68%, 73%);
   --error-color-dark: hsl(0, 70%, 53%);
 }

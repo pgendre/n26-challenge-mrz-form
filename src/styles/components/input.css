@@ -12,7 +12,7 @@ select {
   font-size: 12px;
   -webkit-box-shadow: 1px 1px 7px rgba(189, 183, 183, 0.4);
   box-shadow: 1px 1px 7px rgba(189, 183, 183, 0.4);
-  transition: all 1s ease-out;
+  transition: all 0.7s ease-out;
 }
 
 .form-input::placeholder {
@@ -36,11 +36,11 @@ input {
 }
 
 .form-input input:valid {
-  box-shadow: 0 0 2px 1px green;
+  box-shadow: 0 0 2px 1px var(--main-color-dark);
 }
 
 .form-input input:invalid {
-  box-shadow: 0 0 2px 1px red;
+  box-shadow: 0 0 2px 1px var(--error-color-dark);
 }
 
 .form-input .input-error {
