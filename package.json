@@ -10,6 +10,7 @@
     "mrz-generator": "https://github.com/pgendre/n26-challenge-mrz-generator.git#1.0.0"
   },
   "devDependencies": {
+    "enzyme": "^3.10.0",
     "rewire": "^4.0.1"
   },
   "scripts": {
