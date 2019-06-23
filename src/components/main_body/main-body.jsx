@@ -28,6 +28,9 @@ class MainBody extends React.Component {
   render() {
     return (
       <div className="container-main-body">
+        <p className="indication">
+          Hello, this form allows you to generate a MRZ of type TD3.
+        </p>
         <FormGlobal triggerApiCall={this.triggerApiCall} />
         <MrzResult mrzString={this.state.mrzString} />
       </div>

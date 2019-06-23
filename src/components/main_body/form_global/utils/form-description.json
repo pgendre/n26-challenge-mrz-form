@@ -13,7 +13,7 @@
   },
   "passportNumber": {
     "regex": "^[a-zA-Z0-9]{9}$",
-    "placeholder": "Passport Number, ex: AR3598U7V (exactly 9 characters)",
+    "placeholder": "Passport Number, ex: AR3598U7V",
     "error": "Exactly 9 alphanumeric characters."
   },
   "issuingCountry": {
