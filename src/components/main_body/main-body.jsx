@@ -12,10 +12,6 @@ class MainBody extends React.Component {
     apiError: ''
   }
 
-  changeState = (value, targetedKey) => {
-    this.setState(_.set(_.clone(this.state), `${targetedKey}.value`, value))
-  }
-
   handleApiCall = res => {
     this.setState({ mrzString: res.mrz })
   }

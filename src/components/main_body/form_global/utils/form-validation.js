@@ -33,11 +33,10 @@ const _checkRequiredFieldAndProcessError = (field, newState) =>
     ? _enableError(field, newState)
     : _disableError(field, newState)
 
-const _checkDatesCoherency = newState => {
-  if (!_areBirthDateAndExpirationDateCoherent(newState)) {
-    _enableError('dateOfExpiration', newState)
-  }
-}
+const _checkDatesCoherency = newState =>
+  !_areBirthDateAndExpirationDateCoherent(newState)
+    ? _enableError('dateOfExpiration', newState)
+    : _disableError('dateOfExpiration', newState)
 
 const _doesStringMatchRegex = (field, newState) =>
   new RegExp(formDescription[field].regex).test(newState[field].value)
