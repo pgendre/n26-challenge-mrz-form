@@ -26,6 +26,6 @@
     "error": "Required."
   },
   "dateOfExpiration": {
-    "error": "Required."
+    "error": "Required. Must occure later than the birth of date."
   }
 }

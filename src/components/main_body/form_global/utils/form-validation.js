@@ -18,6 +18,10 @@ const formValidation = state => {
   if (_isValueAnEmptyString(newState.dateOfExpiration.value)) {
     _enableError('dateOfExpiration', newState)
   }
+  if (!_areBirthDateAndExpirationDateCoherent(newState)) {
+    _enableError('dateOfExpiration', newState)
+  }
+
   return { isFormValid: _isFormValid(newState), newState }
 }
 
@@ -33,6 +37,15 @@ const _doesStringMatchRegex = (field, newState) =>
 const _enableError = (field, newState) => {
   newState[field].error = formDescription[field].error
 }
+
+const _areBirthDateAndExpirationDateCoherent = newState =>
+  _doesDateAOccurBeforeDateB(
+    newState.dateOfBirth.value,
+    newState.dateOfExpiration.value
+  )
+
+const _doesDateAOccurBeforeDateB = (strDateA, strDateB) =>
+  new Date(strDateA) < new Date(strDateB)
 
 const _isFormValid = newState => _getEnabledErrors(newState).length === 0
 
